@@ -1,4 +1,4 @@
-# Weighted Directed Graph Project
+# Module 1
 
 This project builds a **weighted, directed graph** from a structured input file containing cities and roads. It can handle hundreds of cities and roads, and outputs the graph as an **adjacency list**.
 
@@ -28,3 +28,14 @@ This project builds a **weighted, directed graph** from a structured input file 
 ### 3. `input.txt`
 - Example input file.
 - **Format:**
+- CITIES
+City1
+City2
+City3
+City4
+ROADS
+City1 City2 5
+City2 City3 3
+City3 City4 4
+City1 City4 10
+
