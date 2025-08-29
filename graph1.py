@@ -44,3 +44,4 @@ g.removeEdge("Columbia", "sedalia")
 
 print("After:", g.city_dict)
 
+GeneratorExit
