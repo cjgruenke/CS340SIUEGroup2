@@ -16,7 +16,6 @@ class Graph():
             self.AddNode(city2) 
         self.city_dict[city][city2] = weight  # makes city two another dict and adds the weight to it
 
-
     def removeEdge(self, city, city2):                               
         if city in self.city_dict and city2 in self.city_dict[city]:      #Remove the road from city → city2 if it exists"
             del self.city_dict[city][city2]
@@ -30,18 +29,15 @@ class Graph():
             if city in self.city_dict[c]:
                 del self.city_dict[c][city]
 
+    def to_adjacency_list(self):
+        result = []
+        for city, neighbors in self.city_dict.items():
+            if neighbors:
+                roads = ", ".join(f"{nbr}({w})" for nbr, w in neighbors.items())
+                result.append(f"{city}: {roads}")
+            else:
+                result.append(f"{city}:")
+        return "\n".join(result)
+
+
 g = Graph()
-
-g.AddNode("Columbia")
-g.addEdge("Columbia", "sedalia", 5)
-g.AddNode("Moberly")
-g.addEdge("Moberly", "Columbia", 10)
-g.AddNode("Edwardsville")
-
-print("Before:", g.city_dict, "\n")
-
-g.removeEdge("Columbia", "sedalia")
-
-print("After:", g.city_dict)
-
-GeneratorExit
