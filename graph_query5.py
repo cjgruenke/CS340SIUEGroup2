@@ -1,6 +1,6 @@
 # graph_query5.py
 import sys
-from ExtendedGraph import Graph
+from extendedGraph import Graph
 from dijkstra import shortest_path_query
 from k_paths import k_paths_query
 
