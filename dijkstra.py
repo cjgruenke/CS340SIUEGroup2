@@ -1,25 +1,25 @@
+# dijkstra.py
 import heapq
+INF = float("inf")
 
 def dijkstra(graph, start, target):
-
-    priorityqueue = [(0, start, [start])]  # (cost, current_city, path)
+    pq = [(0, start, [start])]  # (cost, node, path)
     visited = set()
 
-    while priorityqueue:
-        dist, city, path = heapq.heappop(priorityqueue)
-
+    while pq:
+        dist, city, path = heapq.heappop(pq)
         if city in visited:
             continue
         visited.add(city)
 
-        if city == target:  # shortest path found
+        if city == target:
             return path, dist
 
-        for neighbor, weight in graph.get(city, {}).items():
+        for neighbor, weight in graph.neighbors(city):
             if neighbor not in visited:
-                heapq.heappush(priorityqueue, (dist + weight, neighbor, path + [neighbor]))
+                heapq.heappush(pq, (dist + weight, neighbor, path + [neighbor]))
 
-    return None, float("inf")
+    return None, INF
 
 
 def shortest_path_query(graph, src, dest):
@@ -27,4 +27,4 @@ def shortest_path_query(graph, src, dest):
     if path is None:
         return f"SHORTEST_PATH {src} {dest}: no path found"
     path_str = " -> ".join(path)
-    return f"SHORTEST_PATH {src} {dest}: {path_str} (cost: {cost})"
+    return f"SHORTEST_PATH {src} {dest}: {path_str} (cost: {int(cost)})"
