@@ -37,4 +37,8 @@ def QUERYK_PATHS(start, destination, k):
         route = " -> ".join(p)
         print(f"{i}) {route} ({c})")
                 
+<<<<<<< HEAD
     return paths[destination]
+=======
+    return paths[destination]
+>>>>>>> 26552e2564fce588e16cdee7e261ff5bcb78d484
