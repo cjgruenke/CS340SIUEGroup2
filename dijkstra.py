@@ -1,5 +1,6 @@
 # dijkstra.py
 import heapq
+from extendedGraph import Graph
 INF = float("inf")
 
 def dijkstra(graph, start, target):
