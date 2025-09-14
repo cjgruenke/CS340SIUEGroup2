@@ -3,6 +3,10 @@ import heapq
 INF = float("inf")
 
 def dijkstra(graph, start, target):
+    """
+    Dijkstra using graph.neighbors(u) (which must return (v, effective_weight)).
+    Returns (path_list, total_cost) or (None, INF).
+    """
     pq = [(0, start, [start])]  # (cost, node, path)
     visited = set()
 
